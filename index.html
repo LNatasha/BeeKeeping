@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Colmeias</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; color: #333; }
+        .lang-switcher { margin-bottom: 20px; }
+        .lang-section { display: none; }
+        .active { display: block; }
+        h1 { color: #2c3e50; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        footer { margin-top: 40px; font-size: 0.9em; color: #7f8c8d; }
+    </style>
+</head>
+<body>
+
+    <div class="lang-switcher">
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('pt-pt')">Português (PT)</button>
+        <button onclick="setLang('pt-br')">Português (BR)</button>
+    </div>
+
+    <!-- English -->
+    <div id="en" class="lang-section active">
+        <h1>Privacy Policy for Colmeias</h1>
+        <p><em>Last updated: June 30, 2026</em></p>
+        <p>At Colmeias, we prioritize your privacy. We want to be completely transparent about how our application handles your information:</p>
+        <ul>
+            <li><strong>No Data Collection:</strong> We do not collect, store, or share any personal information about you.</li>
+            <li><strong>No Data Storage:</strong> Our application does not store any user data on our servers. All data remains locally on your device.</li>
+            <li><strong>No Advertisements:</strong> This app contains no advertisements and does not track your usage.</li>
+        </ul>
+        <p>If you have any questions, please contact us at: <strong>[Insert Email]</strong></p>
+    </div>
+
+    <!-- PT-PT -->
+    <div id="pt-pt" class="lang-section">
+        <h1>Política de Privacidade da Colmeias</h1>
+        <p><em>Última atualização: 30 de junho de 2026</em></p>
+        <p>Na Colmeias, a sua privacidade é a nossa prioridade. Queremos ser totalmente transparentes sobre a forma como a nossa aplicação trata a sua informação:</p>
+        <ul>
+            <li><strong>Sem Recolha de Dados:</strong> Não recolhemos, armazenamos ou partilhamos qualquer informação pessoal sobre si.</li>
+            <li><strong>Sem Armazenamento de Dados:</strong> A nossa aplicação não armazena quaisquer dados de utilizador nos nossos servidores. Todos os dados permanecem localmente no seu dispositivo.</li>
+            <li><strong>Sem Publicidade:</strong> Esta aplicação não contém publicidade e não monitoriza a sua utilização.</li>
+        </ul>
+        <p>Se tiver alguma dúvida, por favor contacte-nos através do e-mail: <strong>[Inserir Email]</strong></p>
+    </div>
+
+    <!-- PT-BR -->
+    <div id="pt-br" class="lang-section">
+        <h1>Política de Privacidade do Colmeias</h1>
+        <p><em>Última atualização: 30 de junho de 2026</em></p>
+        <p>No Colmeias, sua privacidade é nossa prioridade. Queremos ser totalmente transparentes sobre como nosso aplicativo lida com suas informações:</p>
+        <ul>
+            <li><strong>Sem Coleta de Dados:</strong> Não coletamos, armazenamos ou compartilhamos nenhuma informação pessoal sobre você.</li>
+            <li><strong>Sem Armazenamento de Dados:</strong> Nosso aplicativo não armazena nenhum dado de usuário em nossos servidores. Todos os dados permanecem localmente no seu dispositivo.</li>
+            <li><strong>Sem Anúncios:</strong> Este aplicativo não contém anúncios e não rastreia seu uso.</li>
+        </ul>
+        <p>Se você tiver alguma dúvida, entre em contato conosco pelo e-mail: <strong>[Inserir Email]</strong></p>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
+        }
+    </script>
+</body>
+</html>
