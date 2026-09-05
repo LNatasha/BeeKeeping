@@ -15,6 +15,7 @@ enum NavTarget: Hashable {
 
 struct ContentView: View {
     @State private var store = HiveStore()
+    @State private var profileStore = ProfileStore()
     @State private var showSplash = true
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
 
@@ -45,6 +46,7 @@ struct ContentView: View {
             }
             .tint(.amberAccent)
             .environment(store)
+            .environment(profileStore)
 
             if !hasCompletedOnboarding && !showSplash {
                 OnboardingView {

@@ -15,6 +15,7 @@ struct HomeView: View {
     @Environment(HiveStore.self) private var store
     @Environment(\.horizontalSizeClass) private var sizeClass
     @State private var showAddHive = false
+    @State private var showProfile = false
     @State private var showShareSheet = false
     @State private var shareItems: [Any] = []
     @State private var showImporter = false
@@ -87,6 +88,9 @@ struct HomeView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Menu {
+                    Button("Perfil", systemImage: "person.circle") {
+                        showProfile = true
+                    }
                     Button("Exportar Dados", systemImage: "square.and.arrow.up") {
                         exportData()
                     }
@@ -117,6 +121,9 @@ struct HomeView: View {
         .sheet(isPresented: $showAddHive) {
             AddHiveSheet(isPresented: $showAddHive)
                 .environment(store)
+        }
+        .sheet(isPresented: $showProfile) {
+            ProfileView(isPresented: $showProfile)
         }
         .sheet(isPresented: $showShareSheet) {
             ShareSheet(items: shareItems)
