@@ -24,7 +24,7 @@ struct ProfileView: View {
                             .multilineTextAlignment(.trailing)
                     }
                     LabeledContent("Número de Colmeias Registadas") {
-                        TextField("", text: $numeroColmeiasRegistadas)
+                        TextField("0", text: $numeroColmeiasRegistadas)
                             .keyboardType(.numberPad)
                             .multilineTextAlignment(.trailing)
                     }
@@ -32,12 +32,12 @@ struct ProfileView: View {
                 Section("Localização") {
                     LabeledContent("Latitude") {
                         TextField("", text: $latitude)
-                            .keyboardType(.decimalPad)
+                            .keyboardType(.numbersAndPunctuation)
                             .multilineTextAlignment(.trailing)
                     }
                     LabeledContent("Longitude") {
                         TextField("", text: $longitude)
-                            .keyboardType(.decimalPad)
+                            .keyboardType(.numbersAndPunctuation)
                             .multilineTextAlignment(.trailing)
                     }
                     Button {
@@ -84,10 +84,10 @@ struct ProfileView: View {
                 latitude = store.profile.latitude
                 longitude = store.profile.longitude
             }
-            .onChange(of: locationFetcher.coordinate?.latitude) {
+            .onChange(of: locationFetcher.fetchToken) {
                 guard let coord = locationFetcher.coordinate else { return }
-                latitude = String(coord.latitude)
-                longitude = String(coord.longitude)
+                latitude = String(format: "%.6f", coord.latitude)
+                longitude = String(format: "%.6f", coord.longitude)
             }
         }
     }

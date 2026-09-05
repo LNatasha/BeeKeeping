@@ -5,6 +5,7 @@ import Observation
 class LocationFetcher: NSObject, CLLocationManagerDelegate {
     var coordinate: (latitude: Double, longitude: Double)?
     var isFetching: Bool = false
+    var fetchToken = UUID()
 
     private let manager = CLLocationManager()
 
@@ -41,6 +42,7 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
         isFetching = false
         guard let loc = locations.last else { return }
         coordinate = (latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
+        fetchToken = UUID()
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
