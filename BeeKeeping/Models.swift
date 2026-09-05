@@ -389,3 +389,13 @@ extension Hive {
         )
     }()
 }
+
+// MARK: - Beekeeper Profile
+
+struct BeekeeperProfile: Codable, Equatable {
+    var numeroApicultor: String = ""
+    var nomeAssociacao: String = ""
+    var numeroColmeiasRegistadas: String = ""
+    var latitude: String = ""
+    var longitude: String = ""
+}
