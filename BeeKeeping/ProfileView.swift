@@ -15,16 +15,31 @@ struct ProfileView: View {
         NavigationStack {
             Form {
                 Section("Apicultor") {
-                    TextField("Número de Apicultor", text: $numeroApicultor)
-                    TextField("Nome da Associação", text: $nomeAssociacao)
-                    TextField("Número de Colmeias Registadas", text: $numeroColmeiasRegistadas)
-                        .keyboardType(.numberPad)
+                    LabeledContent("Número de Apicultor") {
+                        TextField("", text: $numeroApicultor)
+                            .multilineTextAlignment(.trailing)
+                    }
+                    LabeledContent("Nome da Associação") {
+                        TextField("", text: $nomeAssociacao)
+                            .multilineTextAlignment(.trailing)
+                    }
+                    LabeledContent("Número de Colmeias Registadas") {
+                        TextField("", text: $numeroColmeiasRegistadas)
+                            .keyboardType(.numberPad)
+                            .multilineTextAlignment(.trailing)
+                    }
                 }
                 Section("Localização") {
-                    TextField("Latitude", text: $latitude)
-                        .keyboardType(.decimalPad)
-                    TextField("Longitude", text: $longitude)
-                        .keyboardType(.decimalPad)
+                    LabeledContent("Latitude") {
+                        TextField("", text: $latitude)
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
+                    }
+                    LabeledContent("Longitude") {
+                        TextField("", text: $longitude)
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
+                    }
                     Button {
                         locationFetcher.requestLocation()
                     } label: {
