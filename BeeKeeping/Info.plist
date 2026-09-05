@@ -8,6 +8,8 @@
 	<false/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>A Colmeias usa o microfone para reconhecer comandos de voz ao editar os quadros da colmeia.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>A Colmeias usa a localização para preencher automaticamente as coordenadas GPS do teu apiário no perfil.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>A Colmeias usa o reconhecimento de voz para identificar comandos como "quadro três criação" ao gerir os quadros.</string>
 	<key>UILaunchScreen</key>
