@@ -15,17 +15,17 @@ struct ProfileView: View {
         NavigationStack {
             Form {
                 Section("Apicultor") {
-                    LabeledContent("Número de Apicultor") {
+                    LabeledContent("Nr Apicultor") {
                         TextField("", text: $numeroApicultor)
                             .multilineTextAlignment(.trailing)
                     }
-                    LabeledContent("Nome da Associação") {
-                        TextField("", text: $nomeAssociacao)
-                            .multilineTextAlignment(.trailing)
-                    }
-                    LabeledContent("Número de Colmeias Registadas") {
+                    LabeledContent("Nr Colmeias") {
                         TextField("0", text: $numeroColmeiasRegistadas)
                             .keyboardType(.numberPad)
+                            .multilineTextAlignment(.trailing)
+                    }
+                    LabeledContent("Associação") {
+                        TextField("", text: $nomeAssociacao)
                             .multilineTextAlignment(.trailing)
                     }
                 }
